@@ -6,7 +6,6 @@
     font-display: swap;
 }
 
-
 body{
     background-image: url("img/background-lime.gif");
     background-repeat: repeat;
@@ -26,6 +25,10 @@ button{
     display: flex;
     justify-content: space-between;
     flex-flow: row wrap;
+}
+
+.inactiveProgressPoint{
+    opacity: 0.3;
 }
 
 #header{
