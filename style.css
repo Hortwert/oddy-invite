@@ -1,6 +1,25 @@
+@font-face {
+    font-family: 'OTFont';
+    src: url('fonts/LCD5x8HRU.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
 body{
     background-image: url("img/background-lime.gif");
     background-repeat: repeat;
+    font-family: 'OTFont', sans-serif;
+}
+
+button{
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    color: inherit;
+    cursor: pointer;
 }
 
 .flex{
@@ -9,10 +28,11 @@ body{
     flex-flow: row wrap;
 }
 
-h1{
-    color: aqua;
+#header{
+    backdrop-filter: blur(9px);
 }
 
 #loading{
     background-size: 100% auto;
+    color: greenyellow;
 }
