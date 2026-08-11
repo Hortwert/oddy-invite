@@ -1,5 +1,5 @@
 const DATA = {
-    "percentage": 90,
+    "percentage": 60,
 };
 
 const delay = ms => new Promise(res => setTimeout(res, ms));
@@ -16,7 +16,7 @@ async function startTextLoading(){
         document.getElementById("loading").textContent = "Connecting to Oddy Temple...";
         await delay(500);
     }
-}
+};
 
 function fillProgress(){
     const progressDiv = document.getElementById("progress");
@@ -44,7 +44,7 @@ function fillProgress(){
     var list = document.getElementsByClassName("activeProgressPoint");
     var lastProgressPoint = list[list.length - 1];
     lastProgressPoint.src = "img/progressBarPoint.gif";
-}
+};
 
 
 window.addEventListener('resize', fillProgress);

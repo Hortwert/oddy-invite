@@ -6,13 +6,13 @@
     font-display: swap;
 }
 
-body{
-    background-image: url("img/background-lime.gif");
+body {
+    background-image: url("img/void.gif");
     background-repeat: repeat;
     font-family: 'OTFont', sans-serif;
 }
 
-button{
+button {
     background-color: transparent;
     border: none;
     padding: 0;
@@ -21,21 +21,43 @@ button{
     cursor: pointer;
 }
 
-.flex{
+.flex {
     display: flex;
     justify-content: space-between;
     flex-flow: row wrap;
 }
 
-.inactiveProgressPoint{
+.content {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.groupChat {
+    flex: 0 0 20%;
+    height: 100%;
+    padding: 20px;
+    overflow-y: auto;
+    border-right: 2px solid #565656;
+    overflow-wrap: break-word;
+}
+
+.subContent {
+    flex: 1;
+    height: 100%;
+    padding: 20px;
+    overflow-y: auto;
+    overflow-wrap: break-word;
+}
+
+.inactiveProgressPoint {
     opacity: 0.3;
 }
 
-#header{
+#header {
     backdrop-filter: blur(9px);
 }
 
-#loading{
+#loading {
     background-size: 100% auto;
     color: greenyellow;
 }
