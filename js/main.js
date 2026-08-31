@@ -3,9 +3,9 @@ const DATA = {
 };
 
 var BASICCOMMANDS = {
-    "percentage": `Прогресс подключения: ${DATA["percentage"]}`,
-    "help": "Нативная консоль OT-C v0.6. Разработка продолжается. Чтобы увидеть доступные команды, введите coms",
-    "status": "Текущий уровень доступа: average_user[0].",
+    "percentage": `Прогресс подключения: ${DATA["percentage"]}.`,
+    "help": "Нативная консоль OT-C v0.6. Разработка продолжается. Чтобы увидеть доступные команды, введите coms.",
+    "status": "Текущий уровень доступа: average_user[0]. Возможность поднятия уровня не предусмотрена данной версией.",
 };
 
 var consoleOutput = [];
@@ -110,11 +110,11 @@ function consoleInput(input) {
 
 function updateConsoleOutput(input, output) {
     const consoleOutputField = document.getElementsByClassName("consoleOutput")[0];
-    consoleOutput.push("> " + input);
-    consoleOutput.push(output);
+    consoleOutput.unshift(output);
+    consoleOutput.unshift("> " + input);
     if (consoleOutput.length > CONSOLE_HISTORY) {
-        consoleOutput.shift();
-        consoleOutput.shift();
+        consoleOutput.pop();
+        consoleOutput.pop();
     }
     consoleOutputField.textContent = ""
     for (let i = 0; i < consoleOutput.length; i++) {
@@ -128,9 +128,10 @@ window.addEventListener('resize', fillProgress);
 
 document.addEventListener('click', function() {
     const audio = document.getElementById('bg-music');
+    document.getElementById("musTip").textContent = "";
     // Если музыка еще не играет, запускаем
     if (audio.paused) {
-        audio.play().catch(e => console.log('Автовоспроизведение заблокировано'));
+        audio.play().catch(e => console.warn('Автовоспроизведение заблокировано, музыки не будет.'));
         }
 }, { once: true }); // { once: true } — сработает только один раз
 
